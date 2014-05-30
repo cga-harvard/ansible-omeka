@@ -13,3 +13,4 @@
     - imagemagick
     - git
     - git-core
+    - unzip

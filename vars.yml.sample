@@ -1,0 +1,25 @@
+user: ubuntu
+keypair: omeka
+instance_type: t1.micro
+security_group: omeka
+region: us-east-1
+image: ami-c8cf3ba0
+instance_count: 1
+
+plugin_dir: /home/ubuntu/omeka_plugins
+omeka_tag: Omeka Test 1
+omekadir: /var/www/omeka
+debug: false
+
+neatline_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-2.2.4.zip
+nl_features_url: http://omeka.org/wordpress/wp-content/uploads/NeatlineFeatures-2.0.2.zip
+nl_maps_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Maps-1.0.1.zip
+nl_simile_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Widget-SIMILE-Timeline-2.0.1.zip
+nl_text_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Widget-Text-0.2.zip
+nl_time_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Time-2.0.3.zip
+nl_waypoints_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Widget-Waypoints-2.0.2.zip
+dropbox_url: http://omeka.org/wordpress/wp-content/uploads/Dropbox-0.7.2.zip
+csv_import_url: http://omeka.org/wordpress/wp-content/uploads/CSV-Import-2.0.2.zip
+
+
+

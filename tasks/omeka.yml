@@ -2,7 +2,6 @@
 - name: git clone omeka
   git: repo=https://github.com/omeka/Omeka.git
        dest={{ omekadir }}
-       recursive=yes
   sudo: true
 - name: db.ini
   template: src=db.ini.j2 dest={{ omekadir }}/db.ini
@@ -49,6 +48,42 @@
               regexp='# (SetEnv APPLICATION_ENV .*)'
               line='\1'
   sudo: true
+
+- name: create_download_dir
+  file: state=directory path={{ plugin_dir }}
+
+- name: download_neatline
+  get_url: url={{ neatline_url }} dest={{ plugin_dir }}/neatline.zip
+
+- name: download_neatline_features
+  get_url: url={{ nl_features_url }} dest={{ plugin_dir }}/features.zip
+
+- name: download_neatline_maps
+  get_url: url={{ nl_maps_url }} dest={{ plugin_dir }}/maps.zip
+
+- name: download_neatline_simile
+  get_url: url={{ nl_simile_url }} dest={{ plugin_dir }}/simile.zip
+  
+- name: download_neatline_time
+  get_url: url={{ nl_time_url }} dest={{ plugin_dir }}/time.zip
+  
+- name: download_neatline_text
+  get_url: url={{ nl_text_url }} dest={{ plugin_dir }}/text.zip
+
+- name: download_neatline_waypoints
+  get_url: url={{ nl_waypoints_url }} dest={{ plugin_dir }}/waypoints.zip
+
+- name: download_dropbox
+  get_url: url={{ dropbox_url }} dest={{ plugin_dir }}/dropbox.zip
+  
+- name: download_csv
+  get_url: url={{ csv_import_url }} dest={{ plugin_dir }}/csv.zip
+  
+- name: unzip_plugins 
+  command: unzip -o {{ plugin_dir }}/\*.zip -d {{omekadir}}/plugins
+  sudo: true
+  
+
 - name: files
   file: path={{ omekadir }}/files recurse=yes mode=0777
   sudo: true
@@ -56,3 +91,5 @@
   lineinfile: line='127.0.0.1        {{ hostname }}' state=present insertafter=EOF dest=/etc/hosts
   sudo: true
   when: hostname is defined
+
+
