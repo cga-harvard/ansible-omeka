@@ -10,16 +10,28 @@ plugin_dir: /home/ubuntu/omeka_plugins
 omeka_tag: Omeka Test 1
 omekadir: /var/www/omeka
 debug: false
-
-neatline_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-2.2.4.zip
-nl_features_url: http://omeka.org/wordpress/wp-content/uploads/NeatlineFeatures-2.0.2.zip
-nl_maps_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Maps-1.0.1.zip
-nl_simile_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Widget-SIMILE-Timeline-2.0.1.zip
-nl_text_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Widget-Text-0.2.zip
-nl_time_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Time-2.0.3.zip
-nl_waypoints_url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Widget-Waypoints-2.0.2.zip
-dropbox_url: http://omeka.org/wordpress/wp-content/uploads/Dropbox-0.7.2.zip
-csv_import_url: http://omeka.org/wordpress/wp-content/uploads/CSV-Import-2.0.2.zip
-
-
-
+plugins:
+  neatline:
+    url: http://omeka.org/wordpress/wp-content/uploads/Neatline-2.2.4.zip
+    file: neatline.zip
+  neatline_features:
+    url: http://omeka.org/wordpress/wp-content/uploads/NeatlineFeatures-2.0.2.zip
+    file: nl_features.zip
+  neatline_simile:
+    url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Widget-SIMILE-Timeline-2.0.1.zip
+    file: nl_simile.zip
+  neatline_text:
+    url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Widget-Text-0.2.zip
+    file: nl_text.zip
+  neatline_time:
+    url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Time-2.0.3.zip
+    file: nl_time.zip
+  neatline_waypoints:
+    url: http://omeka.org/wordpress/wp-content/uploads/Neatline-Widget-Waypoints-2.0.2.zip
+    file: nl_waypoints.zip
+  dropbox:
+    url: http://omeka.org/wordpress/wp-content/uploads/Dropbox-0.7.2.zip
+    file: dropbox.zip
+  csv_import:
+    url:  http://omeka.org/wordpress/wp-content/uploads/CSV-Import-2.0.2.zip
+    file: csvimport.zip

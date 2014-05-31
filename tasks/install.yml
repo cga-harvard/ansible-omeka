@@ -8,6 +8,7 @@
   with_items:
     - apache2
     - php5
+    - php5-curl
     - mysql-server
     - php5-mysql
     - imagemagick

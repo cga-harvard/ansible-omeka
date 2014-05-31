@@ -71,8 +71,7 @@
     - include: tasks/db.yml
     - include: tasks/apache.yml
     - include: tasks/omeka.yml
-      vars:
-        omekadir: /var/www/omeka
+    
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
@@ -90,3 +89,8 @@
     - name: Allocate a new elastic IP and associate it with an instance
       ec2_eip: instance_id={{ item.id }} region=us-east-1
       with_items: ec2.instances
+      
+    - name: hostname
+      lineinfile: line='127.0.0.1        {{ hostname }}' state=present insertafter=EOF dest=/etc/hosts
+      sudo: true
+      when: hostname is defined
