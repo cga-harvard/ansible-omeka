@@ -1,13 +1,16 @@
-user: ubuntu
+omeka_tag: Default Omeka Instance
+
+user: mbertrand
 keypair: omeka
-instance_type: t1.micro
+instance_type: m1.small
 security_group: omeka
 region: us-east-1
 image: ami-c8cf3ba0
 instance_count: 1
+disk_size: 160
+
 
 plugin_dir: /home/ubuntu/omeka_plugins
-omeka_tag: Omeka Test 1
 omekadir: /var/www/omeka
 debug: false
 plugins:
@@ -35,3 +38,4 @@ plugins:
   csv_import:
     url:  http://omeka.org/wordpress/wp-content/uploads/CSV-Import-2.0.2.zip
     file: csvimport.zip
+
