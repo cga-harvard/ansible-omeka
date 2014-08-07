@@ -6,7 +6,7 @@
   connection: local
   user: "{{user}}"
   gather_facts: false
-  
+
   tags:
       - stage
 
@@ -56,7 +56,7 @@
       with_items: ec2.instances
  
     - name: Breathing room (Ansible uses python apt, has issues running directly after boot)
-      pause: seconds=15
+      pause: seconds=120
 
 
 
@@ -88,20 +88,20 @@
       service: name=apache2 state=restarted
       sudo: true
       
-#- name: Assign permanent IP's
-#  hosts: 127.0.0.1
-#  connection: local
-#  user: "{{user}}"
-#  gather_facts: false
-#  vars_files:
-#    - vars.yml
+- name: Assign permanent IP's
+  hosts: 127.0.0.1
+  connection: local
+  user: "{{user}}"
+  gather_facts: false
+  vars_files:
+    - vars.yml
 
-#  tasks:
-#    - name: Allocate a new elastic IP and associate it with an instance
-#      ec2_eip: instance_id={{ item.id }} region=us-east-1
-#      with_items: ec2.instances
-#      
-#    - name: hostname
-#      lineinfile: line='127.0.0.1        {{ hostname }}' state=present insertafter=EOF dest=/etc/hosts
-#      sudo: true
-#      when: hostname is defined
+  tasks:
+    - name: Allocate a new elastic IP and associate it with an instance
+      ec2_eip: instance_id={{ item.id }} region=us-east-1
+      with_items: ec2.instances
+      
+    - name: hostname
+      lineinfile: line='127.0.0.1        {{ hostname }}' state=present insertafter=EOF dest=/etc/hosts
+      sudo: true
+      when: hostname is defined

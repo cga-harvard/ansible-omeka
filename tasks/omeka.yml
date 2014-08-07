@@ -25,13 +25,13 @@
   ini_file: dest={{ omekadir }}/application/tests/config.ini
             section=testing
             option=db.username
-            value=omeka
+            value={{db_username}}
   sudo: true
 - name: tests/config.ini db.password
   ini_file: dest={{ omekadir }}/application/tests/config.ini
             section=testing
             option=db.password
-            value=omeka
+            value={{db_password}}
   sudo: true
 - name: tests/config.ini db.dbname
   ini_file: dest={{ omekadir }}/application/tests/config.ini

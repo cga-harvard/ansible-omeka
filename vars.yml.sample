@@ -1,4 +1,6 @@
 omeka_tag: Default Omeka Instance
+db_username: omeka
+db_password: omeka
 
 user: mbertrand
 keypair: omeka
@@ -38,4 +40,10 @@ plugins:
   csv_import:
     url:  http://omeka.org/wordpress/wp-content/uploads/CSV-Import-2.0.2.zip
     file: csvimport.zip
+  commenting:
+    url: http://omeka.org/wordpress/wp-content/uploads/Commenting-2.1.zip
+    file: commenting.zip
+  geolocation:
+    url: http://omeka.org/wordpress/wp-content/uploads/Geolocation-2.2.1.zip
+    file: geolocation.zip
 
